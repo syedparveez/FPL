@@ -1,0 +1,31 @@
+
+<ul class="nav nav-pills">
+        <li *ngFor = "let team of allTeamList" class="nav-item">
+            <a [routerLink]="['/team', team.TeamID]" >{{team.TeamName}}</a>
+        </li>
+</ul>
+
+<div class="row" *ngFor = "let team of teamDetails" >
+    <div *ngFor = "let player of team.PlayersInTeam" class="col-md-2">
+      <div  class="card card-custom bg-white border-white border-0">
+          <div class="card-custom-avatar">
+            <img class="img-fluid" src="http://res.cloudinary.com/d3/image/upload/c_pad,g_center,h_200,q_auto:eco,w_200/bootstrap-logo_u3c8dx.jpg" alt="Avatar" />
+          </div>
+          <h4 class="card-title"><a>{{player.PlayerName}}</a></h4>
+          <div class="card-body">
+              <div class="row">
+                  <h6 class="control-label col-xs-9">Batting Style:</h6>
+                  <h6 class="control-label col-xs-3">{{player.BattingStyle}}</h6>
+              </div>
+              <div class="row">
+                  <h6 class="control-label col-xs-9">Bowling Style:</h6>
+                  <h6 class="control-label col-xs-3">{{player.BowlingStyle}}</h6>
+              </div>
+              <div class="row">
+                  <h6 class="control-label col-xs-9">Bought for:</h6>
+                  <h6 class="control-label col-xs-3">{{player.AuctionedPrice}}</h6>
+              </div>
+          </div>
+        </div>
+      </div>
+  </div>

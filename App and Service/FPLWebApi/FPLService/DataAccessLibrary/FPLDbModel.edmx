@@ -1,0 +1,568 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="FintellixPremierLeagueModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Auction">
+          <Key>
+            <PropertyRef Name="SlNo" />
+          </Key>
+          <Property Name="SlNo" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PlayerID" Type="int" Nullable="false" />
+          <Property Name="AuctionID" Type="bigint" Nullable="false" />
+          <Property Name="BasePrice" Type="int" Nullable="false" />
+          <Property Name="Year" Type="int" Nullable="false" />
+          <Property Name="AuctionedPrice" Type="int" />
+        </EntityType>
+        <EntityType Name="LoginTable">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PlayerDetails">
+          <Key>
+            <PropertyRef Name="PlayerID" />
+          </Key>
+          <Property Name="PlayerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PlayerName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="BattingStyle" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="BowlingStyle" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Bio" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Squad">
+          <Key>
+            <PropertyRef Name="SlNo" />
+          </Key>
+          <Property Name="SlNo" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TeamID" Type="int" Nullable="false" />
+          <Property Name="PlayerID" Type="int" Nullable="false" />
+          <Property Name="Year" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TeamDetails">
+          <Key>
+            <PropertyRef Name="SlNo" />
+          </Key>
+          <Property Name="SlNo" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TeamID" Type="int" Nullable="false" />
+          <Property Name="OwnerName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CaptainID" Type="int" Nullable="false" />
+          <Property Name="Year" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TeamMaster">
+          <Key>
+            <PropertyRef Name="TeamID" />
+          </Key>
+          <Property Name="TeamID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TeamName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Auction_PlayerDetails">
+          <End Role="PlayerDetails" Type="Self.PlayerDetails" Multiplicity="1" />
+          <End Role="Auction" Type="Self.Auction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlayerDetails">
+              <PropertyRef Name="PlayerID" />
+            </Principal>
+            <Dependent Role="Auction">
+              <PropertyRef Name="PlayerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Squad_PlayerDetails">
+          <End Role="PlayerDetails" Type="Self.PlayerDetails" Multiplicity="1" />
+          <End Role="Squad" Type="Self.Squad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlayerDetails">
+              <PropertyRef Name="PlayerID" />
+            </Principal>
+            <Dependent Role="Squad">
+              <PropertyRef Name="PlayerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Squad_TeamMaster">
+          <End Role="TeamMaster" Type="Self.TeamMaster" Multiplicity="1" />
+          <End Role="Squad" Type="Self.Squad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TeamMaster">
+              <PropertyRef Name="TeamID" />
+            </Principal>
+            <Dependent Role="Squad">
+              <PropertyRef Name="TeamID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TeamDetails_PlayerDetails">
+          <End Role="PlayerDetails" Type="Self.PlayerDetails" Multiplicity="1" />
+          <End Role="TeamDetails" Type="Self.TeamDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlayerDetails">
+              <PropertyRef Name="PlayerID" />
+            </Principal>
+            <Dependent Role="TeamDetails">
+              <PropertyRef Name="CaptainID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TeamDetails_TeamMaster">
+          <End Role="TeamMaster" Type="Self.TeamMaster" Multiplicity="1" />
+          <End Role="TeamDetails" Type="Self.TeamDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TeamMaster">
+              <PropertyRef Name="TeamID" />
+            </Principal>
+            <Dependent Role="TeamDetails">
+              <PropertyRef Name="TeamID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="addPlayerToTeam" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TeamID" Type="int" Mode="In" />
+          <Parameter Name="PlayerID" Type="int" Mode="In" />
+          <Parameter Name="Year" Type="bigint" Mode="In" />
+          <Parameter Name="AuctionedPrice" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetAllAuctionablePlayersDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="getAllTeamDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="getAllTeamList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="getAuctionablePlayerById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AuctionID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getTeamDetailsByTeamID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TeamID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="removePlayer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TeamID" Type="int" Mode="In" />
+          <Parameter Name="PlayerID" Type="int" Mode="In" />
+          <Parameter Name="Year" Type="bigint" Mode="In" />
+        </Function>
+        <EntityContainer Name="FintellixPremierLeagueModelStoreContainer">
+          <EntitySet Name="Auction" EntityType="Self.Auction" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LoginTable" EntityType="Self.LoginTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PlayerDetails" EntityType="Self.PlayerDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Squad" EntityType="Self.Squad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TeamDetails" EntityType="Self.TeamDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TeamMaster" EntityType="Self.TeamMaster" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Auction_PlayerDetails" Association="Self.FK_Auction_PlayerDetails">
+            <End Role="PlayerDetails" EntitySet="PlayerDetails" />
+            <End Role="Auction" EntitySet="Auction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Squad_PlayerDetails" Association="Self.FK_Squad_PlayerDetails">
+            <End Role="PlayerDetails" EntitySet="PlayerDetails" />
+            <End Role="Squad" EntitySet="Squad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Squad_TeamMaster" Association="Self.FK_Squad_TeamMaster">
+            <End Role="TeamMaster" EntitySet="TeamMaster" />
+            <End Role="Squad" EntitySet="Squad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TeamDetails_PlayerDetails" Association="Self.FK_TeamDetails_PlayerDetails">
+            <End Role="PlayerDetails" EntitySet="PlayerDetails" />
+            <End Role="TeamDetails" EntitySet="TeamDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TeamDetails_TeamMaster" Association="Self.FK_TeamDetails_TeamMaster">
+            <End Role="TeamMaster" EntitySet="TeamMaster" />
+            <End Role="TeamDetails" EntitySet="TeamDetails" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FintellixPremierLeagueModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Auction">
+          <Key>
+            <PropertyRef Name="SlNo" />
+          </Key>
+          <Property Name="SlNo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PlayerID" Type="Int32" Nullable="false" />
+          <Property Name="AuctionID" Type="Int64" Nullable="false" />
+          <Property Name="BasePrice" Type="Int32" Nullable="false" />
+          <Property Name="Year" Type="Int32" Nullable="false" />
+          <Property Name="AuctionedPrice" Type="Int32" />
+          <NavigationProperty Name="PlayerDetail" Relationship="Self.FK_Auction_PlayerDetails" FromRole="Auction" ToRole="PlayerDetails" />
+        </EntityType>
+        <EntityType Name="LoginTable">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PlayerDetail">
+          <Key>
+            <PropertyRef Name="PlayerID" />
+          </Key>
+          <Property Name="PlayerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PlayerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BattingStyle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BowlingStyle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Bio" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Auctions" Relationship="Self.FK_Auction_PlayerDetails" FromRole="PlayerDetails" ToRole="Auction" />
+          <NavigationProperty Name="Squads" Relationship="Self.FK_Squad_PlayerDetails" FromRole="PlayerDetails" ToRole="Squad" />
+          <NavigationProperty Name="TeamDetails" Relationship="Self.FK_TeamDetails_PlayerDetails" FromRole="PlayerDetails" ToRole="TeamDetails" />
+        </EntityType>
+        <EntityType Name="Squad">
+          <Key>
+            <PropertyRef Name="SlNo" />
+          </Key>
+          <Property Name="SlNo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TeamID" Type="Int32" Nullable="false" />
+          <Property Name="PlayerID" Type="Int32" Nullable="false" />
+          <Property Name="Year" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="PlayerDetail" Relationship="Self.FK_Squad_PlayerDetails" FromRole="Squad" ToRole="PlayerDetails" />
+          <NavigationProperty Name="TeamMaster" Relationship="Self.FK_Squad_TeamMaster" FromRole="Squad" ToRole="TeamMaster" />
+        </EntityType>
+        <EntityType Name="TeamDetail">
+          <Key>
+            <PropertyRef Name="SlNo" />
+          </Key>
+          <Property Name="SlNo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TeamID" Type="Int32" Nullable="false" />
+          <Property Name="OwnerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CaptainID" Type="Int32" Nullable="false" />
+          <Property Name="Year" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="PlayerDetail" Relationship="Self.FK_TeamDetails_PlayerDetails" FromRole="TeamDetails" ToRole="PlayerDetails" />
+          <NavigationProperty Name="TeamMaster" Relationship="Self.FK_TeamDetails_TeamMaster" FromRole="TeamDetails" ToRole="TeamMaster" />
+        </EntityType>
+        <EntityType Name="TeamMaster">
+          <Key>
+            <PropertyRef Name="TeamID" />
+          </Key>
+          <Property Name="TeamID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TeamName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Squads" Relationship="Self.FK_Squad_TeamMaster" FromRole="TeamMaster" ToRole="Squad" />
+          <NavigationProperty Name="TeamDetails" Relationship="Self.FK_TeamDetails_TeamMaster" FromRole="TeamMaster" ToRole="TeamDetails" />
+        </EntityType>
+        <Association Name="FK_Auction_PlayerDetails">
+          <End Role="PlayerDetails" Type="Self.PlayerDetail" Multiplicity="1" />
+          <End Role="Auction" Type="Self.Auction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlayerDetails">
+              <PropertyRef Name="PlayerID" />
+            </Principal>
+            <Dependent Role="Auction">
+              <PropertyRef Name="PlayerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Squad_PlayerDetails">
+          <End Role="PlayerDetails" Type="Self.PlayerDetail" Multiplicity="1" />
+          <End Role="Squad" Type="Self.Squad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlayerDetails">
+              <PropertyRef Name="PlayerID" />
+            </Principal>
+            <Dependent Role="Squad">
+              <PropertyRef Name="PlayerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TeamDetails_PlayerDetails">
+          <End Role="PlayerDetails" Type="Self.PlayerDetail" Multiplicity="1" />
+          <End Role="TeamDetails" Type="Self.TeamDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlayerDetails">
+              <PropertyRef Name="PlayerID" />
+            </Principal>
+            <Dependent Role="TeamDetails">
+              <PropertyRef Name="CaptainID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Squad_TeamMaster">
+          <End Role="TeamMaster" Type="Self.TeamMaster" Multiplicity="1" />
+          <End Role="Squad" Type="Self.Squad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TeamMaster">
+              <PropertyRef Name="TeamID" />
+            </Principal>
+            <Dependent Role="Squad">
+              <PropertyRef Name="TeamID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TeamDetails_TeamMaster">
+          <End Role="TeamMaster" Type="Self.TeamMaster" Multiplicity="1" />
+          <End Role="TeamDetails" Type="Self.TeamDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TeamMaster">
+              <PropertyRef Name="TeamID" />
+            </Principal>
+            <Dependent Role="TeamDetails">
+              <PropertyRef Name="TeamID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FintellixPremierLeagueEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Auctions" EntityType="Self.Auction" />
+          <EntitySet Name="LoginTables" EntityType="Self.LoginTable" />
+          <EntitySet Name="PlayerDetails" EntityType="Self.PlayerDetail" />
+          <EntitySet Name="Squads" EntityType="Self.Squad" />
+          <EntitySet Name="TeamDetails" EntityType="Self.TeamDetail" />
+          <EntitySet Name="TeamMasters" EntityType="Self.TeamMaster" />
+          <AssociationSet Name="FK_Auction_PlayerDetails" Association="Self.FK_Auction_PlayerDetails">
+            <End Role="PlayerDetails" EntitySet="PlayerDetails" />
+            <End Role="Auction" EntitySet="Auctions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Squad_PlayerDetails" Association="Self.FK_Squad_PlayerDetails">
+            <End Role="PlayerDetails" EntitySet="PlayerDetails" />
+            <End Role="Squad" EntitySet="Squads" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TeamDetails_PlayerDetails" Association="Self.FK_TeamDetails_PlayerDetails">
+            <End Role="PlayerDetails" EntitySet="PlayerDetails" />
+            <End Role="TeamDetails" EntitySet="TeamDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Squad_TeamMaster" Association="Self.FK_Squad_TeamMaster">
+            <End Role="TeamMaster" EntitySet="TeamMasters" />
+            <End Role="Squad" EntitySet="Squads" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TeamDetails_TeamMaster" Association="Self.FK_TeamDetails_TeamMaster">
+            <End Role="TeamMaster" EntitySet="TeamMasters" />
+            <End Role="TeamDetails" EntitySet="TeamDetails" />
+          </AssociationSet>
+          <FunctionImport Name="addPlayerToTeam">
+            <Parameter Name="TeamID" Mode="In" Type="Int32" />
+            <Parameter Name="PlayerID" Mode="In" Type="Int32" />
+            <Parameter Name="Year" Mode="In" Type="Int64" />
+            <Parameter Name="AuctionedPrice" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetAllAuctionablePlayerDetails" ReturnType="Collection(FintellixPremierLeagueModel.GetAllAuctionablePlayerDetails_Result)" />
+          <FunctionImport Name="getAllTeamDetails" ReturnType="Collection(FintellixPremierLeagueModel.getAllTeamDetails_Result)" />
+          <FunctionImport Name="getAuctionablePlayerById" ReturnType="Collection(FintellixPremierLeagueModel.getAuctionablePlayerById_Result)">
+          <Parameter Name="AuctionID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getTeamDetailsByTeamID" ReturnType="Collection(FintellixPremierLeagueModel.getTeamDetailsByTeamID_Result)">
+          <Parameter Name="TeamID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getAllTeamList" ReturnType="Collection(FintellixPremierLeagueModel.getAllTeamList_Result)" />
+          <FunctionImport Name="removePlayer">
+            <Parameter Name="TeamID" Mode="In" Type="Int32" />
+            <Parameter Name="PlayerID" Mode="In" Type="Int32" />
+            <Parameter Name="Year" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="GetAllAuctionablePlayersDetails" ReturnType="Collection(FintellixPremierLeagueModel.GetAllAuctionablePlayersDetails_Result)" />
+        </EntityContainer>
+        <ComplexType Name="GetAllAuctionablePlayerDetails_Result">
+          <Property Type="Int64" Name="SlNo" Nullable="false" />
+          <Property Type="Int32" Name="PlayerID" Nullable="false" />
+          <Property Type="Int64" Name="AuctionID" Nullable="false" />
+          <Property Type="Int32" Name="BasePrice" Nullable="false" />
+          <Property Type="Int32" Name="Year" Nullable="false" />
+          <Property Type="Int32" Name="AuctionedPrice" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="getAllTeamDetails_Result">
+          <Property Type="Int32" Name="TeamID" Nullable="false" />
+          <Property Type="String" Name="TeamName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="OwnerName" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="CaptainID" Nullable="false" />
+          <Property Type="String" Name="CaptainName" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="PlayerID" Nullable="false" />
+          <Property Type="String" Name="PlayerName" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="getAuctionablePlayerById_Result">
+          <Property Type="Int64" Name="AuctionID" Nullable="false" />
+          <Property Type="Int32" Name="PlayerID" Nullable="false" />
+          <Property Type="String" Name="PlayerName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="BattingStyle" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="BowlingStyle" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Bio" Nullable="true" />
+          <Property Type="Int32" Name="BasePrice" Nullable="false" />
+          <Property Type="Int32" Name="AuctionedPrice" Nullable="true" />
+          <Property Type="Int32" Name="Year" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="getTeamDetailsByTeamID_Result">
+          <Property Type="Int32" Name="TeamID" Nullable="false" />
+          <Property Type="String" Name="TeamName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="OwnerName" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="CaptainID" Nullable="false" />
+          <Property Type="String" Name="CaptainName" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="PlayerID" Nullable="false" />
+          <Property Type="String" Name="PlayerName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="BattingStyle" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="BowlingStyle" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Bio" Nullable="true" />
+          <Property Type="Int32" Name="AuctionedPrice" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="getAllTeamList_Result">
+          <Property Type="Int32" Name="TeamID" Nullable="false" />
+          <Property Type="String" Name="TeamName" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="GetAllAuctionablePlayersDetails_Result">
+          <Property Type="Int64" Name="AuctionID" Nullable="false" />
+          <Property Type="Int32" Name="PlayerID" Nullable="false" />
+          <Property Type="String" Name="PlayerName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="BattingStyle" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="BowlingStyle" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Bio" Nullable="true" />
+          <Property Type="Int32" Name="BasePrice" Nullable="false" />
+          <Property Type="Int32" Name="AuctionedPrice" Nullable="true" />
+          <Property Type="Int32" Name="Year" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FintellixPremierLeagueModelStoreContainer" CdmEntityContainer="FintellixPremierLeagueEntities">
+          <EntitySetMapping Name="Auctions">
+            <EntityTypeMapping TypeName="FintellixPremierLeagueModel.Auction">
+              <MappingFragment StoreEntitySet="Auction">
+                <ScalarProperty Name="SlNo" ColumnName="SlNo" />
+                <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+                <ScalarProperty Name="AuctionID" ColumnName="AuctionID" />
+                <ScalarProperty Name="BasePrice" ColumnName="BasePrice" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="AuctionedPrice" ColumnName="AuctionedPrice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoginTables">
+            <EntityTypeMapping TypeName="FintellixPremierLeagueModel.LoginTable">
+              <MappingFragment StoreEntitySet="LoginTable">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PlayerDetails">
+            <EntityTypeMapping TypeName="FintellixPremierLeagueModel.PlayerDetail">
+              <MappingFragment StoreEntitySet="PlayerDetails">
+                <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+                <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+                <ScalarProperty Name="BattingStyle" ColumnName="BattingStyle" />
+                <ScalarProperty Name="BowlingStyle" ColumnName="BowlingStyle" />
+                <ScalarProperty Name="Bio" ColumnName="Bio" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Squads">
+            <EntityTypeMapping TypeName="FintellixPremierLeagueModel.Squad">
+              <MappingFragment StoreEntitySet="Squad">
+                <ScalarProperty Name="SlNo" ColumnName="SlNo" />
+                <ScalarProperty Name="TeamID" ColumnName="TeamID" />
+                <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TeamDetails">
+            <EntityTypeMapping TypeName="FintellixPremierLeagueModel.TeamDetail">
+              <MappingFragment StoreEntitySet="TeamDetails">
+                <ScalarProperty Name="SlNo" ColumnName="SlNo" />
+                <ScalarProperty Name="TeamID" ColumnName="TeamID" />
+                <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+                <ScalarProperty Name="CaptainID" ColumnName="CaptainID" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TeamMasters">
+            <EntityTypeMapping TypeName="FintellixPremierLeagueModel.TeamMaster">
+              <MappingFragment StoreEntitySet="TeamMaster">
+                <ScalarProperty Name="TeamID" ColumnName="TeamID" />
+                <ScalarProperty Name="TeamName" ColumnName="TeamName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="addPlayerToTeam" FunctionName="FintellixPremierLeagueModel.Store.addPlayerToTeam" />
+          <FunctionImportMapping FunctionImportName="getAllTeamDetails" FunctionName="FintellixPremierLeagueModel.Store.getAllTeamDetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FintellixPremierLeagueModel.getAllTeamDetails_Result">
+                <ScalarProperty Name="TeamID" ColumnName="TeamID" />
+                <ScalarProperty Name="TeamName" ColumnName="TeamName" />
+                <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+                <ScalarProperty Name="CaptainID" ColumnName="CaptainID" />
+                <ScalarProperty Name="CaptainName" ColumnName="CaptainName" />
+                <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+                <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getAuctionablePlayerById" FunctionName="FintellixPremierLeagueModel.Store.getAuctionablePlayerById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FintellixPremierLeagueModel.getAuctionablePlayerById_Result">
+                <ScalarProperty Name="AuctionID" ColumnName="AuctionID" />
+                <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+                <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+                <ScalarProperty Name="BattingStyle" ColumnName="BattingStyle" />
+                <ScalarProperty Name="BowlingStyle" ColumnName="BowlingStyle" />
+                <ScalarProperty Name="Bio" ColumnName="Bio" />
+                <ScalarProperty Name="BasePrice" ColumnName="BasePrice" />
+                <ScalarProperty Name="AuctionedPrice" ColumnName="AuctionedPrice" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getTeamDetailsByTeamID" FunctionName="FintellixPremierLeagueModel.Store.getTeamDetailsByTeamID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FintellixPremierLeagueModel.getTeamDetailsByTeamID_Result">
+                <ScalarProperty Name="TeamID" ColumnName="TeamID" />
+                <ScalarProperty Name="TeamName" ColumnName="TeamName" />
+                <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+                <ScalarProperty Name="CaptainID" ColumnName="CaptainID" />
+                <ScalarProperty Name="CaptainName" ColumnName="CaptainName" />
+                <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+                <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+                <ScalarProperty Name="BattingStyle" ColumnName="BattingStyle" />
+                <ScalarProperty Name="BowlingStyle" ColumnName="BowlingStyle" />
+                <ScalarProperty Name="Bio" ColumnName="Bio" />
+                <ScalarProperty Name="AuctionedPrice" ColumnName="AuctionedPrice" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getAllTeamList" FunctionName="FintellixPremierLeagueModel.Store.getAllTeamList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FintellixPremierLeagueModel.getAllTeamList_Result">
+                <ScalarProperty Name="TeamID" ColumnName="TeamID" />
+                <ScalarProperty Name="TeamName" ColumnName="TeamName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="removePlayer" FunctionName="FintellixPremierLeagueModel.Store.removePlayer" />
+          <FunctionImportMapping FunctionImportName="GetAllAuctionablePlayersDetails" FunctionName="FintellixPremierLeagueModel.Store.GetAllAuctionablePlayersDetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FintellixPremierLeagueModel.GetAllAuctionablePlayersDetails_Result">
+                <ScalarProperty Name="AuctionID" ColumnName="AuctionID" />
+                <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+                <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+                <ScalarProperty Name="BattingStyle" ColumnName="BattingStyle" />
+                <ScalarProperty Name="BowlingStyle" ColumnName="BowlingStyle" />
+                <ScalarProperty Name="Bio" ColumnName="Bio" />
+                <ScalarProperty Name="BasePrice" ColumnName="BasePrice" />
+                <ScalarProperty Name="AuctionedPrice" ColumnName="AuctionedPrice" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

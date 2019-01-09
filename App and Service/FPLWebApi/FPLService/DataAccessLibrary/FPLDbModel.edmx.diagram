@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c50bbbeeb5334c079b2029706cd59a69" Name="Diagram1">
+        <EntityTypeShape EntityType="FintellixPremierLeagueModel.Auction" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FintellixPremierLeagueModel.LoginTable" Width="1.5" PointX="5.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="FintellixPremierLeagueModel.PlayerDetail" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FintellixPremierLeagueModel.Squad" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FintellixPremierLeagueModel.TeamDetail" Width="1.5" PointX="6" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FintellixPremierLeagueModel.TeamMaster" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="FintellixPremierLeagueModel.FK_Auction_PlayerDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="FintellixPremierLeagueModel.FK_Squad_PlayerDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="FintellixPremierLeagueModel.FK_TeamDetails_PlayerDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="FintellixPremierLeagueModel.FK_Squad_TeamMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="FintellixPremierLeagueModel.FK_TeamDetails_TeamMaster" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

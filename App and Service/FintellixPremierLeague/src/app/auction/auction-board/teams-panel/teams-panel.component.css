@@ -1,0 +1,21 @@
+.card-custom {
+    min-height: 310px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+    margin-right: 3px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .card-custom-avatar img {
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+    margin-top: -20px;
+    margin-left: -25px;
+    width: 50px;
+    height: 50px;
+  }
+  .line-height-30px{
+      line-height: 25px;
+  }
+  

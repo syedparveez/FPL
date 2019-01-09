@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FintellixPremierLeagueModelStoreContainer" CdmEntityContainer="FintellixPremierLeagueEntities">
+    <EntitySetMapping Name="Auctions">
+      <EntityTypeMapping TypeName="FintellixPremierLeagueModel.Auction">
+        <MappingFragment StoreEntitySet="Auction">
+          <ScalarProperty Name="SlNo" ColumnName="SlNo" />
+          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+          <ScalarProperty Name="AuctionID" ColumnName="AuctionID" />
+          <ScalarProperty Name="BasePrice" ColumnName="BasePrice" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="AuctionedPrice" ColumnName="AuctionedPrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoginTables">
+      <EntityTypeMapping TypeName="FintellixPremierLeagueModel.LoginTable">
+        <MappingFragment StoreEntitySet="LoginTable">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlayerDetails">
+      <EntityTypeMapping TypeName="FintellixPremierLeagueModel.PlayerDetail">
+        <MappingFragment StoreEntitySet="PlayerDetails">
+          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+          <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+          <ScalarProperty Name="BattingStyle" ColumnName="BattingStyle" />
+          <ScalarProperty Name="BowlingStyle" ColumnName="BowlingStyle" />
+          <ScalarProperty Name="Bio" ColumnName="Bio" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Squads">
+      <EntityTypeMapping TypeName="FintellixPremierLeagueModel.Squad">
+        <MappingFragment StoreEntitySet="Squad">
+          <ScalarProperty Name="SlNo" ColumnName="SlNo" />
+          <ScalarProperty Name="TeamID" ColumnName="TeamID" />
+          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TeamDetails">
+      <EntityTypeMapping TypeName="FintellixPremierLeagueModel.TeamDetail">
+        <MappingFragment StoreEntitySet="TeamDetails">
+          <ScalarProperty Name="SlNo" ColumnName="SlNo" />
+          <ScalarProperty Name="TeamID" ColumnName="TeamID" />
+          <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+          <ScalarProperty Name="CaptainID" ColumnName="CaptainID" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TeamMasters">
+      <EntityTypeMapping TypeName="FintellixPremierLeagueModel.TeamMaster">
+        <MappingFragment StoreEntitySet="TeamMaster">
+          <ScalarProperty Name="TeamID" ColumnName="TeamID" />
+          <ScalarProperty Name="TeamName" ColumnName="TeamName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="addPlayerToTeam" FunctionName="FintellixPremierLeagueModel.Store.addPlayerToTeam" />
+    <FunctionImportMapping FunctionImportName="getAllTeamDetails" FunctionName="FintellixPremierLeagueModel.Store.getAllTeamDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FintellixPremierLeagueModel.getAllTeamDetails_Result">
+          <ScalarProperty Name="TeamID" ColumnName="TeamID" />
+          <ScalarProperty Name="TeamName" ColumnName="TeamName" />
+          <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+          <ScalarProperty Name="CaptainID" ColumnName="CaptainID" />
+          <ScalarProperty Name="CaptainName" ColumnName="CaptainName" />
+          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+          <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getAuctionablePlayerById" FunctionName="FintellixPremierLeagueModel.Store.getAuctionablePlayerById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FintellixPremierLeagueModel.getAuctionablePlayerById_Result">
+          <ScalarProperty Name="AuctionID" ColumnName="AuctionID" />
+          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+          <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+          <ScalarProperty Name="BattingStyle" ColumnName="BattingStyle" />
+          <ScalarProperty Name="BowlingStyle" ColumnName="BowlingStyle" />
+          <ScalarProperty Name="Bio" ColumnName="Bio" />
+          <ScalarProperty Name="BasePrice" ColumnName="BasePrice" />
+          <ScalarProperty Name="AuctionedPrice" ColumnName="AuctionedPrice" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getTeamDetailsByTeamID" FunctionName="FintellixPremierLeagueModel.Store.getTeamDetailsByTeamID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FintellixPremierLeagueModel.getTeamDetailsByTeamID_Result">
+          <ScalarProperty Name="TeamID" ColumnName="TeamID" />
+          <ScalarProperty Name="TeamName" ColumnName="TeamName" />
+          <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+          <ScalarProperty Name="CaptainID" ColumnName="CaptainID" />
+          <ScalarProperty Name="CaptainName" ColumnName="CaptainName" />
+          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+          <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+          <ScalarProperty Name="BattingStyle" ColumnName="BattingStyle" />
+          <ScalarProperty Name="BowlingStyle" ColumnName="BowlingStyle" />
+          <ScalarProperty Name="Bio" ColumnName="Bio" />
+          <ScalarProperty Name="AuctionedPrice" ColumnName="AuctionedPrice" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getAllTeamList" FunctionName="FintellixPremierLeagueModel.Store.getAllTeamList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FintellixPremierLeagueModel.getAllTeamList_Result">
+          <ScalarProperty Name="TeamID" ColumnName="TeamID" />
+          <ScalarProperty Name="TeamName" ColumnName="TeamName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="removePlayer" FunctionName="FintellixPremierLeagueModel.Store.removePlayer" />
+    <FunctionImportMapping FunctionImportName="GetAllAuctionablePlayersDetails" FunctionName="FintellixPremierLeagueModel.Store.GetAllAuctionablePlayersDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FintellixPremierLeagueModel.GetAllAuctionablePlayersDetails_Result">
+          <ScalarProperty Name="AuctionID" ColumnName="AuctionID" />
+          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+          <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+          <ScalarProperty Name="BattingStyle" ColumnName="BattingStyle" />
+          <ScalarProperty Name="BowlingStyle" ColumnName="BowlingStyle" />
+          <ScalarProperty Name="Bio" ColumnName="Bio" />
+          <ScalarProperty Name="BasePrice" ColumnName="BasePrice" />
+          <ScalarProperty Name="AuctionedPrice" ColumnName="AuctionedPrice" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,20 @@
+D:\FplWebApi\FPLWebApi\FPLService\DataAccessLibrary\bin\Debug\DataAccessLibrary.dll.config
+D:\FplWebApi\FPLWebApi\FPLService\DataAccessLibrary\bin\Debug\DataAccessLibrary.dll
+D:\FplWebApi\FPLWebApi\FPLService\DataAccessLibrary\bin\Debug\DataAccessLibrary.pdb
+D:\FplWebApi\FPLWebApi\FPLService\DataAccessLibrary\bin\Debug\EntityFramework.dll
+D:\FplWebApi\FPLWebApi\FPLService\DataAccessLibrary\bin\Debug\EntityFramework.SqlServer.dll
+D:\FplWebApi\FPLWebApi\FPLService\DataAccessLibrary\bin\Debug\EntityFramework.xml
+D:\FplWebApi\FPLWebApi\FPLService\DataAccessLibrary\bin\Debug\EntityFramework.SqlServer.xml
+D:\FplWebApi\FPLWebApi\FPLService\DataAccessLibrary\obj\Debug\DataAccessLibrary.csprojResolveAssemblyReference.cache
+D:\FplWebApi\FPLWebApi\FPLService\DataAccessLibrary\obj\Debug\DataAccessLibrary.dll
+D:\FplWebApi\FPLWebApi\FPLService\DataAccessLibrary\obj\Debug\DataAccessLibrary.pdb
+D:\Fpl 1.0\FPLWebApi\FPLService\DataAccessLibrary\bin\Debug\DataAccessLibrary.dll.config
+D:\Fpl 1.0\FPLWebApi\FPLService\DataAccessLibrary\bin\Debug\DataAccessLibrary.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\DataAccessLibrary\bin\Debug\DataAccessLibrary.pdb
+D:\Fpl 1.0\FPLWebApi\FPLService\DataAccessLibrary\bin\Debug\EntityFramework.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\DataAccessLibrary\bin\Debug\EntityFramework.SqlServer.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\DataAccessLibrary\bin\Debug\EntityFramework.xml
+D:\Fpl 1.0\FPLWebApi\FPLService\DataAccessLibrary\bin\Debug\EntityFramework.SqlServer.xml
+D:\Fpl 1.0\FPLWebApi\FPLService\DataAccessLibrary\obj\Debug\DataAccessLibrary.csprojResolveAssemblyReference.cache
+D:\Fpl 1.0\FPLWebApi\FPLService\DataAccessLibrary\obj\Debug\DataAccessLibrary.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\DataAccessLibrary\obj\Debug\DataAccessLibrary.pdb

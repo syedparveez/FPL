@@ -1,0 +1,7 @@
+.auction-panel {
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 12px;
+}

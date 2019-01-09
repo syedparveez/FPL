@@ -1,0 +1,46 @@
+<div class="row">
+    <form [formGroup]="auctionIdForm" (ngSubmit)="GetPlayerForAuction(auctionIdForm.value)">
+        <div class="col-md-3">
+            <input type="text" formControlName="auctionId" class="form-control input-sm input" placeholder="ID">
+        </div>
+        <button type="submit" class="btn btn-success btn-sm">Go!</button>
+        <button type="button" class="btn btn-sm view-btn" (click)="viewAllAuctionablePlayers()" >View all</button>
+        <button *ngIf = "undo.isActive" type="button" class="btn btn-sm pull-right undo-btn" (click)="removePlayer()">Undo</button>
+    </form>
+</div>
+<div class="row" *ngIf="player && !player.AuctionedPrice && !viewAllFlag">
+    <div class="card-custom-avatar col-xs-12">
+        <img class="img-fluid" src="http://res.cloudinary.com/d3/image/upload/c_pad,g_center,h_200,q_auto:eco,w_200/bootstrap-logo_u3c8dx.jpg"
+            alt="Avatar" />
+    </div>
+    <h1 class="col-xs-12 player-name">{{player?.PlayerName}}</h1>
+    <div class="row col-xs-12 padding-10px">
+        <h4 class="col-xs-6">Batting Style:</h4>
+        <h4 class="col-xs-6">{{player?.BattingStyle}}</h4>
+        <h4 class="col-xs-6">Bowling Style:</h4>
+        <h4 class="col-xs-6">{{player?.BowlingStyle}}</h4>
+        <h4 class="col-xs-6">Base Price:</h4>
+        <h4 class="col-xs-6">{{player?.BasePrice}}</h4>
+    </div>
+    <div class="col-xs-12 row">
+        <div class="col-xs-3 team-btn" *ngFor = "let team of allTeamList; let i = index">
+            <button type="button" class="btn btn-warning" (click)="currentBidder('btn-warning', team.TeamID)">{{shortTeamsName[i]}}</button>
+        </div>        
+    </div>
+    <div class="col-xs-12 row team-btn">
+        <button type="button" [ngClass]="currentBidderClr" class="btn btn-lg" (click)="addPlayer(auctionIdForm.value)">{{currentBiddingAmount}} Points</button>
+    </div>
+</div>
+<div class="row" *ngIf="player && player.AuctionedPrice && !viewAllFlag">
+    <blockquote class="blockquote text-center">
+        <p>{{player?.PlayerName}} is already in a Team</p>
+    </blockquote>
+</div>
+
+<div class="card-custom" *ngIf="viewAllFlag">
+    <div class="list-group">
+        <div class="custom-lists" *ngFor = "let player of auctionablePlayers;let i = index" (click)="selectedPlayer(player.PlayerID)">
+            <p>{{i+1}}. {{player.PlayerName}}</p>
+        </div>
+    </div>
+</div>

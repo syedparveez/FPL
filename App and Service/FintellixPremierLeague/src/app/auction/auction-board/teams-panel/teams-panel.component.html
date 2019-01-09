@@ -1,0 +1,15 @@
+<div class="row">
+  <div *ngFor = "let team of allTeamList; let i = index" class="col-md-3">
+    <div  class="card card-custom bg-white border-white border-0 row">
+        <div class="card-custom-avatar col-xs-3">
+          <img class="img-fluid" src="http://res.cloudinary.com/d3/image/upload/c_pad,g_center,h_200,q_auto:eco,w_200/bootstrap-logo_u3c8dx.jpg" alt="Avatar" />
+        </div>
+        <h4 class="card-title col-xs-9"><a [routerLink]="['/team', team.TeamID]">{{team.TeamName}}</a></h4>
+        <div class="card-body col-xs-12" style="overflow-y: auto">
+          <ol *ngIf = "allTeamDetails[i]" class="line-height-30px">
+            <li *ngFor ="let player of allTeamDetails[i].PlayersInTeam">{{player.PlayerName}}</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+</div>

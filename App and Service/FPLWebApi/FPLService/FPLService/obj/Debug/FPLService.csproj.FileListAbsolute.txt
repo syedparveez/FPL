@@ -1,0 +1,190 @@
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\ApplicationInsights.config
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\roslyn\csc.exe
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\roslyn\System.Collections.Immutable.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\roslyn\System.Reflection.Metadata.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\roslyn\vbc.exe
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\roslyn\VBCSCompiler.exe
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\roslyn\VBCSCompiler.exe.config
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\FPLService.dll.config
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\FPLService.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\FPLService.pdb
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Antlr3.Runtime.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\DataAccessLibrary.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\EntityFramework.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\EntityFramework.SqlServer.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Microsoft.AI.Agent.Intercept.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Microsoft.AI.DependencyCollector.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Microsoft.AI.Web.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Microsoft.AI.WindowsServer.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Microsoft.ApplicationInsights.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Microsoft.AspNet.Identity.Core.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Microsoft.Owin.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Microsoft.Owin.Security.Cookies.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Microsoft.Owin.Security.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Microsoft.Owin.Security.Facebook.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Microsoft.Owin.Security.Google.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Microsoft.Owin.Security.OAuth.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Microsoft.Owin.Security.Twitter.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Microsoft.Web.Infrastructure.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Newtonsoft.Json.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Owin.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\System.Net.Http.Formatting.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\System.Web.Cors.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\System.Web.Helpers.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\System.Web.Http.Cors.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\System.Web.Http.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\System.Web.Http.Owin.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\System.Web.Http.WebHost.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\System.Web.Mvc.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\System.Web.Optimization.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\System.Web.Razor.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\System.Web.WebPages.Deployment.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\System.Web.WebPages.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\System.Web.WebPages.Razor.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\WebGrease.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\DataAccessLibrary.pdb
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Microsoft.AI.DependencyCollector.xml
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Microsoft.AI.Web.xml
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Microsoft.AI.WindowsServer.xml
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Microsoft.ApplicationInsights.xml
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\System.Net.Http.Formatting.xml
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\System.Web.Http.xml
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\System.Web.Http.Cors.xml
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Newtonsoft.Json.xml
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\System.Web.Helpers.xml
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\System.Web.Http.WebHost.xml
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\System.Web.Mvc.xml
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\System.Web.Optimization.xml
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\System.Web.Razor.xml
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\System.Web.WebPages.xml
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\System.Web.WebPages.Deployment.xml
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\System.Web.WebPages.Razor.xml
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Antlr3.Runtime.pdb
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\EntityFramework.xml
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\EntityFramework.SqlServer.xml
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Microsoft.AspNet.Identity.Core.xml
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Microsoft.Owin.xml
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Microsoft.Owin.Security.xml
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Microsoft.Owin.Security.Facebook.xml
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Microsoft.Owin.Security.Cookies.xml
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Microsoft.Owin.Security.OAuth.xml
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Microsoft.Owin.Security.Google.xml
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Microsoft.Owin.Security.Twitter.xml
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\bin\System.Web.Http.Owin.xml
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\obj\Debug\FPLService.csprojResolveAssemblyReference.cache
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\obj\Debug\FPLService.dll
+D:\FplWebApi\FPLWebApi\FPLService\FPLService\obj\Debug\FPLService.pdb
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\ApplicationInsights.config
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\roslyn\csc.exe
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\roslyn\System.Collections.Immutable.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\roslyn\System.Reflection.Metadata.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\roslyn\vbc.exe
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\roslyn\VBCSCompiler.exe
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\roslyn\VBCSCompiler.exe.config
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\FPLService.dll.config
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\FPLService.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\FPLService.pdb
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Antlr3.Runtime.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\DataAccessLibrary.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\EntityFramework.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\EntityFramework.SqlServer.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Microsoft.AI.DependencyCollector.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Microsoft.AI.Web.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Microsoft.AI.WindowsServer.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Microsoft.ApplicationInsights.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Microsoft.Owin.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Microsoft.Owin.Security.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Microsoft.Owin.Security.Google.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Microsoft.Web.Infrastructure.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Newtonsoft.Json.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Owin.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\System.Net.Http.Formatting.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\System.Web.Cors.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\System.Web.Helpers.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\System.Web.Http.Cors.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\System.Web.Http.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\System.Web.Http.Owin.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\System.Web.Http.WebHost.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\System.Web.Mvc.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\System.Web.Optimization.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\System.Web.Razor.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\System.Web.WebPages.Deployment.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\System.Web.WebPages.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\System.Web.WebPages.Razor.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\WebGrease.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\DataAccessLibrary.pdb
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Microsoft.AI.DependencyCollector.xml
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Microsoft.AI.Web.xml
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Microsoft.AI.WindowsServer.xml
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Microsoft.ApplicationInsights.xml
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\System.Net.Http.Formatting.xml
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\System.Web.Http.xml
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\System.Web.Http.Cors.xml
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Newtonsoft.Json.xml
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\System.Web.Helpers.xml
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\System.Web.Http.WebHost.xml
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\System.Web.Mvc.xml
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\System.Web.Optimization.xml
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\System.Web.Razor.xml
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\System.Web.WebPages.xml
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\System.Web.WebPages.Deployment.xml
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\System.Web.WebPages.Razor.xml
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Antlr3.Runtime.pdb
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\EntityFramework.xml
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\EntityFramework.SqlServer.xml
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Microsoft.Owin.xml
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Microsoft.Owin.Security.xml
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Microsoft.Owin.Security.Google.xml
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\bin\System.Web.Http.Owin.xml
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\obj\Debug\FPLService.csprojResolveAssemblyReference.cache
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\obj\Debug\FPLService.dll
+D:\Fpl 1.0\FPLWebApi\FPLService\FPLService\obj\Debug\FPLService.pdb

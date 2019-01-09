@@ -1,0 +1,53 @@
+.btn, .input-sm {
+    border-radius: 5px;
+}
+.undo-btn {
+    background-color: #4e5d6c;
+}
+
+.view-btn {
+    background-color: #4e5d6c;
+    margin-left: 15px;
+}
+.custom-lists{
+    padding: 10px;
+}
+.custom-lists:hover{
+    cursor: pointer;
+    background-color: #4e5d6c;
+}
+.card-custom {
+    min-height: 310px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+    margin-right: 3px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    max-height: 568px;
+    overflow-y: auto;
+    line-height: 30px;
+  }
+.card-custom-avatar img {
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+  }
+  .card-custom-avatar {
+    text-align: center;
+    padding-top: 20px;
+  }
+  .player-name {
+    text-align: center;
+  }
+  .team-btn {
+      text-align: center;
+      margin-top: 10px;
+  }
+  .btn-lg {
+      margin-top:20px;
+  }
+  .row {
+      margin-right: 0px;
+  }
+  .blockquote{
+      margin-top: 30px;
+  }
